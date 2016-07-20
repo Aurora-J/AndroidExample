@@ -1,15 +1,19 @@
 package org.aurora.androidexam;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+import org.aurora.androidexam.ui.swipeback.SwipeBackTestActivity;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        findViewById(R.id.bt_swipeback).setOnClickListener(this);
+
     }
 
     @Override
@@ -48,5 +55,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.bt_swipeback:
+                startActivity(new Intent(MainActivity.this, SwipeBackTestActivity.class));
+                break;
+        }
     }
 }

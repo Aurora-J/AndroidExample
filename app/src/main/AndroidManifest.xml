@@ -18,7 +18,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.touch.TouchEventActivity"></activity>
+        <activity android:name=".ui.touch.TouchEventActivity" />
+
+        <service
+            android:name=".service.NormalService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.TestIntentService"
+            android:exported="false" />
+
+        <activity android:name=".ui.layoutprocess.LayoutProcessActivity" />
+        <activity android:name=".material.MaterialActivity" />
+        <activity android:name=".ui.rootview.RootViewActivity" />
+        <activity android:name=".ui.swipeback.SwipeBackTestActivity"></activity>
     </application>
 
 </manifest>
